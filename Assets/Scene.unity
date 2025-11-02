@@ -3717,7 +3717,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  jumpForce: 900
+  jumpForce: 1200
 --- !u!50 &1827418544
 Rigidbody2D:
   serializedVersion: 5
