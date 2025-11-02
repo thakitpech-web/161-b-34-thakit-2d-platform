@@ -2,26 +2,31 @@ using UnityEngine;
 
 public class Ant : Enemy
 {
-    [SerializeField] Vector2 velocity;
-    public Transform[] MovePoint;
+    public Vector2 velocity;
+    public Transform[] movePoints;
+    void Start()
+    {
+        base.Intialize(20);
+        DamageHit = 20;
+        //set speed and direction of movement
+        velocity = new Vector2(-1.0f, 0.0f); //start with moving left
+    }
     public override void Behavior()
     {
+        //move from current position
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-        if (velocity.x < 0 && rb.position.x <= MovePoint[0].position.x)
+        //move left และเกินขอบซ้าย
+        if (velocity.x < 0 && rb.position.x <= movePoints[0].position.x)
         {
             Flip();
         }
         //move right และเกินขอบขวา
-        if (velocity.x > 0 && rb.position.x >= MovePoint[1].position.x)
+        if (velocity.x > 0 && rb.position.x >= movePoints[1].position.x)
         {
             Flip();
         }
     }
-    private void FixedUpdate()
-    {
-        Behavior();
-
-    }
+    //flip ant to the opposite direction
     public void Flip()
     {
         velocity.x *= -1; //change direction of movement
@@ -30,23 +35,9 @@ public class Ant : Enemy
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void FixedUpdate()
     {
-        base.Intialize(20);
-
-        DamageHit = 20;
-
-        velocity = new Vector2(-1.0f, 0.0f);
-
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Behavior();
     }
 }
 
