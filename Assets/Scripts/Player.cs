@@ -11,7 +11,7 @@ public class Player : Character, IShootable
     void Start()
     {
         base.Intialize(100);
-        ReloadTime = 1.0f;
+        ReloadTime = 0.0f;
         WaitTime = 0.0f;
     }
 

@@ -5,8 +5,8 @@ public class Character : MonoBehaviour
 {
 
     private int heath;
-
     public event Action<int, int> OnHealthChanged;
+    [SerializeField] public float maxHp = 100.0f;
 
     public int Heath
     {
@@ -23,6 +23,7 @@ public class Character : MonoBehaviour
 
     public void Intialize(int startHeath)
     {
+        maxHp = startHeath;
         Heath = startHeath;
         OnHealthChanged?.Invoke(Heath, startHeath);
         Debug.Log($"{this.name} is intialize Heath : {this.Heath}");
