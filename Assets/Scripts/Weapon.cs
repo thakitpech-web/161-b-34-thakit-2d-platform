@@ -7,6 +7,8 @@ public abstract class Weapon : MonoBehaviour
     public IShootable Shooter;
     public abstract void Move();
 
+
+
     public abstract void OnHitWith(Character character);
 
     public void InitWeapon(int newDamage, IShootable newShooter)
@@ -22,18 +24,16 @@ public abstract class Weapon : MonoBehaviour
         if (value > 0)
             return 1;
         else return -1;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Character character = other.GetComponent<Character>();
-        if (character == null)
-            character = other.GetComponentInParent<Character>();
-
         if (character != null)
         {
-            OnHitWith(character);
-            Destroy(gameObject);
+            OnHitWith(other.GetComponent<Character>());
+            Destroy(this.gameObject, 5f);
         }
     }
 

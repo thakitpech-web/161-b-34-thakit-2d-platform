@@ -45,6 +45,7 @@ public class Crocodile : Enemy , IShootable
     {
 
         Vector2 distance = transform.position - player.transform.position;
+
         if (distance.magnitude <= atkRange)
         {
             Debug.Log($"{player.name} is in the {this.name}'s atk range!");
@@ -55,6 +56,6 @@ public class Crocodile : Enemy , IShootable
     // Update is called once per frame
     void Update()
     {
-        Behavior();
+        
     }
 }

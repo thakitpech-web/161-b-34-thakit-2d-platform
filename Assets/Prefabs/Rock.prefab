@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 21226392}
   - component: {fileID: 6149632}
   - component: {fileID: 5076126}
-  - component: {fileID: 5584676381128296174}
+  - component: {fileID: 1138366307107186539}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5584676381128296174
+--- !u!114 &1138366307107186539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

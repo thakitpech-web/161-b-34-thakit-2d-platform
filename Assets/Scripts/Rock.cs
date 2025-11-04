@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Rock : Weapon
 {
+
     public Rigidbody2D rb;
     public Vector2 force;
 
@@ -15,7 +16,6 @@ public class Rock : Weapon
     {
         if (character is Player)
             character.TakeDamage(this.damage);
-            
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
